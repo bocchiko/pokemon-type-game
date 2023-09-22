@@ -11,6 +11,12 @@ require 'src/pokemon_defs'
 require 'src/StateMachine'
 require 'src/Util'
 
+require 'src/gui/Menu'
+require 'src/gui/Panel'
+require 'src/gui/ProgressBar'
+require 'src/gui/Selection'
+require 'src/gui/Textbox'
+
 require 'src/states/BaseState'
 require 'src/states/StateStack'
 
