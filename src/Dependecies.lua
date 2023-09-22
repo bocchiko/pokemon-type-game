@@ -3,6 +3,14 @@ Event = require 'lib/knife.event'
 push = require 'lib/push'
 Timer = require 'lib/knife.timer'
 
+require 'src/states/BaseState'
+require 'src/states/StateStack'
+
+require 'src/world/Level'
+require 'src/world/tile_ids'
+require 'src/world/Tile'
+require 'src/world/TileMap'
+
 
 
 gTextures = {
