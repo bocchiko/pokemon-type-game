@@ -11,6 +11,9 @@ require 'src/pokemon_defs'
 require 'src/StateMachine'
 require 'src/Util'
 
+require 'src/battle/BattleSprite'
+require 'src/battle/Opponent'
+
 require 'src/gui/Menu'
 require 'src/gui/Panel'
 require 'src/gui/ProgressBar'
