@@ -2,9 +2,8 @@ Selection = Class{}
 
 function Selection:init(def)
     self.items = def.items
-    self.x = def.x 
-    self.y = def.y 
-
+    self.x = def.x
+    self.y = def.y
     self.height = def.height
     self.width = def.width
     self.font = def.font or gFonts['small']
@@ -14,7 +13,7 @@ end
 
 function Selection:update(dt)
     if love.keyboard.wasPressed('up') then
-        if self.currentSelection ==  1 then
+        if self.currentSelection == 1 then
             self.currentSelection = #self.items
         else
             self.currentSelection = self.currentSelection - 1
@@ -37,13 +36,15 @@ function Selection:update(dt)
 end
 
 function Selection:render()
-    local currentY = self.y 
+    local currentY = self.y
+
     for i = 1, #self.items do
-        local paddedY = currentY + (self.gapHeight / 2) - self.font:gapHeight() / 2
+        local paddedY = currentY + (self.gapHeight / 2) - self.font:getHeight() / 2
         if i == self.currentSelection then
             love.graphics.draw(gTextures['cursor'], self.x - 8, paddedY)
         end
         love.graphics.printf(self.items[i].text, self.x, paddedY, self.width, 'center')
+
         currentY = currentY + self.gapHeight
     end
 end

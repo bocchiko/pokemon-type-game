@@ -1,4 +1,4 @@
-Textbox = Class {}
+Textbox = Class{}
 
 function Textbox:init(x, y, width, height, text, font)
     self.panel = Panel(x, y, width, height)
@@ -19,7 +19,7 @@ function Textbox:nextChunks()
     local chunks = {}
     for i = self.chunkCounter, self.chunkCounter + 2 do
         table.insert(chunks, self.textChunks[i])
-        if i == #self. textChunks then
+        if i == #self.textChunks then
             self.endOfText = true
             return chunks
         end
@@ -34,7 +34,7 @@ function Textbox:next()
         self.panel:toggle()
         self.closed = true
     else
-        sekf.displayingChunks = self:nextChunks()
+        self.displayingChunks = self:nextChunks()
     end
 end
 

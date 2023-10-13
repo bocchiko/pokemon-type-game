@@ -1,30 +1,29 @@
 Level = Class{}
 
 function Level:init()
-    self.tilewidth = 50
-    self.tileheight = 50
-    self.baseLayer = TileMap(self.tilewidth, self.tileheight)
-    self.grassLayer = TileMap(self.tilewidth, self.tileheight)
-    self.halfGrassLayer = TileMap(self.tilewidth, self.tileheight)
+    self.tileWidth = 50
+    self.tileHeight = 50
+
+    self.baseLayer = TileMap(self.tileWidth, self.tileHeight)
+    self.grassLayer = TileMap(self.tileWidth, self.tileHeight)
+    self.halfGrassLayer = TileMap(self.tileWidth, self.tileHeight)
 
     self:createMaps()
 
-    self.player = Player{
-        animations = ENTITY['player'].animations,
+    self.player = Player {
+        animations = ENTITY_DEFS['player'].animations,
         mapX = 10,
         mapY = 10,
         width = 16,
-        height = 16
+        height = 16,
     }
 
-    self.player.stateMachine = StateMachine{
-        ['walk'] = function () return PlayerWalkState(self.player, self) end,
-        ['idle'] = function () return PlayerIdleState(self.player) end
+    self.player.stateMachine = StateMachine {
+        ['walk'] = function() return PlayerWalkState(self.player, self) end,
+        ['idle'] = function() return PlayerIdleState(self.player) end
     }
     self.player.stateMachine:change('idle')
-
 end
-
 
 function Level:createMaps()
 

@@ -7,7 +7,7 @@ function BattleState:init(player)
     self.opponent = Opponent {
         party = Party {
             pokemon = {
-                Pokemon(pokemon.getRandomDef(), math.random(2,6))
+                Pokemon(Pokemon.getRandomDef(), math.random(2,6))
             }
         }   
     }

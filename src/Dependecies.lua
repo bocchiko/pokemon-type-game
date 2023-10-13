@@ -14,6 +14,10 @@ require 'src/Util'
 require 'src/battle/BattleSprite'
 require 'src/battle/Opponent'
 
+require 'src/entity/entity_defs'
+require 'src/entity/Entity'
+require 'src/entity/Player'
+
 require 'src/gui/Menu'
 require 'src/gui/Panel'
 require 'src/gui/ProgressBar'
@@ -23,12 +27,26 @@ require 'src/gui/Textbox'
 require 'src/states/BaseState'
 require 'src/states/StateStack'
 
+require 'src/states/entity/EntityBaseState'
+require 'src/states/entity/EntityIdleState'
+require 'src/states/entity/EntityWalkState'
+require 'src/states/entity/PlayerIdleState'
+require 'src/states/entity/PlayerWalkState'
+
+require 'src/states/game/BattleState'
+require 'src/states/game/BattleMenuState'
+require 'src/states/game/BattleMessageState'
+require 'src/states/game/DialogueState'
+require 'src/states/game/FadeInState'
+require 'src/states/game/FadeOutState'
+require 'src/states/game/PlayState'
+require 'src/states/game/StartState'
+require 'src/states/game/TakeTurnState'
+
 require 'src/world/Level'
 require 'src/world/tile_ids'
 require 'src/world/Tile'
 require 'src/world/TileMap'
-
-
 
 gTextures = {
     ['tiles'] = love.graphics.newImage('graphics/sheet.png'),
